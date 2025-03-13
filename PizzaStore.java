@@ -1009,7 +1009,7 @@
                    String check_login = "SELECT U.login FROM Users U WHERE U.login = '" + new_login + "';";
                    if (esql.executeQuery(check_login) == 0) { // is not found in the data base
                      //  String update_login = "UPDATE Users SET login = '" + new_login + "' WHERE login = '"+find_user+ "';";
-                     String user_data_query = String.format("INSERT INTO Users (login, password, role, phoneNum) VALUES ('%s', '%s', '%s', '%s');",new_login,query.get(0).get(1),query.get(0).get(2),query.get(0).get(3));  
+                     String user_data_query = String.format("INSERT INTO Users (login, password, role,favoriteItems, phoneNum) VALUES ('%s', '%s', '%s', '%s', '%s');",new_login,query.get(0).get(1),query.get(0).get(2),query.get(0).get(3),query.get(0).get(4));  
                      String DeleteOldItem = "DELETE FROM Items WHERE itemName = '"+query.get(0).get(0) + "';";
                      
                       esql.executeUpdate(user_data_query);
