@@ -867,7 +867,7 @@
                       String input_type;
                       switch (update_item) {
                          case 1:
-                            System.out.print("Rename Item: "); // bug fix
+                            System.out.print("Rename Item: "); 
                             input_type = in.readLine();
                            
                            String values = String.format("INSERT INTO Items (itemName, ingredients, typeOfItem, price, description) " + "VALUES ('%s', '%s', '%s', %s, '%s');", input_type, item_info.get(0).get(1), item_info.get(0).get(2), item_info.get(0).get(3), item_info.get(0).get(4) ); 
@@ -998,18 +998,24 @@
                 System.out.print("Enter The User login name: ");
                 String find_user = in.readLine();
     
-                String find_user_query = "SELECT U.login FROM Users U WHERE U.login = '" + find_user + "';";
+                String find_user_query = "SELECT * FROM Users U WHERE U.login = '" + find_user + "';";
     
                 int rowCount = esql.executeQuery(find_user_query);
+                List<List<String>> query = esql.executeQueryAndReturnResult(find_user_query);
     
                 if (rowCount == 1) { // the login exists in the data base
                    System.out.print("Enter a new login name: ");
                    String new_login = in.readLine();
                    String check_login = "SELECT U.login FROM Users U WHERE U.login = '" + new_login + "';";
                    if (esql.executeQuery(check_login) == 0) { // is not found in the data base
-                      String update_login = "UPDATE Users SET login = '" + new_login + "' WHERE login = '"+find_user+ "';";
+                     //  String update_login = "UPDATE Users SET login = '" + new_login + "' WHERE login = '"+find_user+ "';";
+                     String user_data_query = String.format("INSERT INTO Users (login, password, role, phoneNum) VALUES ('%s', '%s', '%s', '%s');",new_login,query.get(0).get(1),query.get(0).get(2),query.get(0).get(3));  
+                     String DeleteOldItem = "DELETE FROM Items WHERE itemName = '"+query.get(0).get(0) + "';";
+                     
+                      esql.executeUpdate(user_data_query);
+                      esql.executeUpdate(DeleteOldItem);
                       
-                      esql.executeUpdate(update_login);
+
                    }
                    else {
                       throw new Exception("cannot update login to "+new_login+ " bc it does not exist");
