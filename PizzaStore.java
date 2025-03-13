@@ -837,7 +837,7 @@
  
     public static void updateMenu(PizzaStore esql, String User) {
        try {
-          String u = "SELECT * FROM USERS U WHERE U.login = '" + User + "' AND U.role = 'manager';";
+          String u = "SELECT U.role FROM USERS U WHERE U.login = '" + User + "' AND U.role = 'manager';";
           if(esql.executeQuery(u) == 1) {
              System.out.println("Select the following options");
              System.out.println("1. Update Item");
