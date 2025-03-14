@@ -989,7 +989,7 @@
  
    public static void updateUser(PizzaStore esql, String User) {
     try {
-        // Ensure only managerw can update users
+        // Ensure only manager can update users
         String managerCheck = "SELECT * FROM Users WHERE login = '" + User + "' AND role = 'manager';";
         if (esql.executeQuery(managerCheck) != 1) {
             throw new Exception("Access Denied. Only managers can update a user.");
