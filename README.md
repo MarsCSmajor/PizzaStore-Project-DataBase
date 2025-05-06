@@ -40,6 +40,6 @@ A Java-based pizza store simulation with PostgreSQL backend and role-based acces
 
 ## Screenshots of program
 
--New User account
+-**New User account**
 ![Alt Text](Login-sample.png)
 
