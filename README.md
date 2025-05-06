@@ -42,7 +42,20 @@ A Java-based pizza store simulation with PostgreSQL backend and role-based acces
 
 ![User Account login](Login-sample.png)
 
-## User authentication
+## User authentication and home Menu
 
 ![Alt Text](Login-auth.png)
+
+## Menu with Entree,sides, and drinks based on price
+
+![Alt Text1](view-menu.png)
+
+## Place an order based on Store ID. 
+![Alt Text2](menu-order.png)
+
+## View order history and status
+![Alt Text3](order-history.png)
+
+
+
 
