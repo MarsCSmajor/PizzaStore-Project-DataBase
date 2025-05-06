@@ -6,7 +6,8 @@ A Java-based pizza store simulation with PostgreSQL backend and role-based acces
 
 ### 👤 Authentication
 - Secure login system for returning users
-- New user registration with role assignment
+- New user registration with role assignment by default as customer
+- if your a manager, you can edit/modify each users role
 
 ### 🧾 Customer
 - Create a new pizza order
