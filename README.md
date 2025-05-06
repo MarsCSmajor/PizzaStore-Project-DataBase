@@ -37,9 +37,9 @@ A Java-based pizza store simulation with PostgreSQL backend and role-based acces
 | Driver     | View and update delivery status                            |
 | Manager    | Full access: manage menu, orders, and user roles           |
 
-## 🏁 Getting Started
 
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/yourusername/pizza-store-java.git
-   cd pizza-store-java
+## Screenshots of program
+
+-New User account
+![Alt Text](Login-sample.png)
+
