@@ -38,8 +38,11 @@ A Java-based pizza store simulation with PostgreSQL backend and role-based acces
 | Manager    | Full access: manage menu, orders, and user roles           |
 
 
-## Screenshots of program
-
+## New User Account
 
 ![User Account login](Login-sample.png)
+
+## User authentication
+
+![Alt Text](Login-auth.png)
 
